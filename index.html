@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+                <nav class="nav">
+                    <ul class="nav__links">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#about-me">About Me</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="header__title focus-in-expand-fwd">
+                    <h1>Zuzana Vratna</h1>
+                    <h3>Frontend Development</h3>
+                    <div
+                        class="btn--scroll-to bounce-in-top"
+                        id="arrow-container"
+                    >
+                        <script>
+                            var animation = bodymovin.loadAnimation({
+                                container:
+                                    document.getElementById('arrow-container'),
+                                path: 'assets/arrow-down.json',
+                                render: 'svg',
+                                loop: true,
+                                autoplay: true,
+                            })
+                        </script>
+                    </div>
+                </div>
+            </header>
+
+            <section class="section" id="projects">
+                <h2 class="section__title">Projects</h2>
+                <div class="section__content">
+                    <div class="project project--christmas-wishlist">
+                        <h4>Christmas Wishlist</h4>
+                        <div class="christmas-wishlist__body">
+                            <div class="christmas-wishlist__body__part1">
+                                <p>
+                                    My most favourite project, the Christmas
+                                    WishList, originated as a very simple idea
+                                    for a React app but grew in complexity each
+                                    day of its development. I started Christmas
+                                    WishList from scratch, with zero knowledge
+                                    of React, Firebase or Sass at the beginning
+                                    so I had not expected that one day I would
+                                    be showcasing it on my portfolio as a
+                                    full-fledged functional dynamic web
+                                    application.
+                                </p>
+                                <br />
+                                <p>
+                                    It is a note-taking inspired app with a
+                                    built-in media player and a responsive
+                                    design. It is hosted live on github pages
+                                    and you may access it through this link.
+                                    Here are some testing accounts that you may
+                                    use: beta@testy.com, testy@testy.com
+                                    christmas@wish.com, password:
+                                    weLoveChristmas123.
+                                </p>
+                            </div>
+                            <!-- <video class="chrismas-wishlist-mobile" controls>
+                                <source src="assets/Untitled.mp4" />
+                            </video> -->
+                            <img
+                                src="assets/wishlist-mobile.gif"
+                                class="chrismas-wishlist-mobile"
+                            />
+
+                            <img
+                                src="assets/wishlist-desktop.gif"
+                                class="christmas-wishlist-desktop"
+                            />
+                            <div class="christmas-wishlist__body__part2">
+                                <h4>Technologies used:</h4>
+                                <ul>
+                                    <li>React</li>
+                                    <li>JavaScript</li>
+                                    <li>SCSS</li>
+                                    <li>Firestore</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project project--other">
+                        <h4>Other Projects</h4>
+                        <p>
+                            My work in the following projects consisted of
+                            incorporating JavaScript functionality into for the
+                            most part provided HTML and CSS codebase.
+                        </p>
+                        <div class="project--other__mozaic">
+                            <div class="column-left">
+                                <img
+                                    src="assets/bankist-app.gif"
+                                    class="gif bankist-app"
+                                />
+                                <img
+                                    src="assets/guess-number.gif"
+                                    class="gif guess-number"
+                                />
+                                <img
+                                    src="assets/pig-game.gif"
+                                    class="gif pig-game"
+                                />
+                            </div>
+                            <div class="column-right">
+                                <img
+                                    src="assets/bankist-landing.gif"
+                                    class="gif bankist-landing"
+                                />
+                                <img src="assets/mapty.gif" class="gif mapty" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="about-me">
+                <h2 class="section__title">About Me</h2>
+                <div class="section__content content-about-me">
+                    <img
+                        class="picture"
+                        src="/the pic.jpg"
+                        alt="profile-picture"
+                    />
+                    <article class="about-me-article">
+                        <!-- TODO: technologies - add span with color matching efect -->
+                        <h4>
+                            I'm Zuzana, and I've always had a passion for
+                            learning.
+                        </h4>
+                        <br />
+                        <p>
+                            After studying languages for years and earning my
+                            degree, I found myself wanting to learn something
+                            new and exciting. That's when I discovered the world
+                            of coding and the endless possibilities it presents.
+                        </p>
+                        <br />
+                        <p>
+                            I took the plunge and started teaching myself how to
+                            code, initially focusing on JavaScript, HTML and
+                            CSS, and later adding React, Sass, and Firestore
+                            into the mix. It was a steep learning curve, and I
+                            encountered many challenges along the way. But I
+                            spent countless hours studying and practicing,
+                            determined to become proficient.
+                        </p>
+                        <br />
+                        <p>
+                            I'm excited to see where this path takes me and am
+                            ready to continue learning and growing as a
+                            developer. See my projects
+                            <a href="#projects" class="cross-link">here</a>.
+                        </p>
+                    </article>
+                </div>
+                <div class="technologies">
+                    <img src="assets/javascript.svg" class="technology" />
+                    <img src="assets/react.svg" class="technology" />
+                    <img src="assets/css.svg" class="technology" />
+                    <img src="assets/html.svg" class="technology" />
+                    <img src="assets/firebase.svg" class="technology" />
+                    <img src="assets/scss.svg" class="technology" />
+                    <img src="assets/github.svg" class="technology" />
+                    <img src="assets/vscode.svg" class="technology" />
+                </div>
+            </section>
+
+            <section class="section" id="contact">
+                <h2 class="section__title">Contact</h2>
+                <div class="section__content content-contact">
+                    <div class="actions">
+                        <button
+                            class="actions__button actions__button--active"
+                            data-tab="email"
+                        >
+                            <img src="assets/email.svg" />
+                        </button>
+                        <button class="actions__button" data-tab="github">
+                            <img src="assets/github.svg" />
+                        </button>
+                        <button class="actions__button" data-tab="resume">
+                            <img src="assets/resume.svg" />
+                        </button>
+                    </div>
+                    <div
+                        class="content-contact__link content-contact__link--email content-contact__link--active"
+                    >
+                        <div class="contact-text-container">
+                            <p>Send me a message at</p>
+
+                            <button class="link link__email">
+                                vratna.zuzana@gmail.com<span
+                                    ><img src="assets/copy.svg"
+                                /></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="content-contact__link content-contact__link--github"
+                    >
+                        <div class="contact-text-container">
+                            <button class="link">
+                                <a
+                                    href="https://github.com/zvratna"
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                    >Check out my GitHub.</a
+                                >
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="content-contact__link content-contact__link--resume"
+                    >
+                        <div class="contact-text-container">
+                            <button class="link">
+                                <a href="Vratna_CV_EN.pdf" download="Vratna_CV">
+                                    Download my CV.</a
+                                >
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script src="script.js"></script>
+        </div>
+    </body>
+</html>
