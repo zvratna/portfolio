@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link
-            href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+            href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
@@ -14,6 +14,7 @@
         <title>Portfolio</title>
     </head>
     <body>
+        <div class="background"></div>
         <div class="container">
             <header class="header">
                 <nav class="nav">
@@ -33,10 +34,7 @@
                 <div class="header__title focus-in-expand-fwd">
                     <h1>Zuzana Vratna</h1>
                     <h3>Frontend Development</h3>
-                    <div
-                        class="btn--scroll-to bounce-in-top"
-                        id="arrow-container"
-                    >
+                    <div class="btn--scroll-to" id="arrow-container">
                         <script>
                             var animation = bodymovin.loadAnimation({
                                 container:
@@ -44,8 +42,11 @@
                                 path: 'assets/arrow-down.json',
                                 render: 'svg',
                                 loop: true,
-                                autoplay: true,
-                            })
+                                autoplay: false,
+                            });
+                            setTimeout(function () {
+                                animation.play();
+                            }, 2200);
                         </script>
                     </div>
                 </div>
@@ -55,9 +56,10 @@
                 <h2 class="section__title">Projects</h2>
                 <div class="section__content">
                     <div class="project project--christmas-wishlist">
-                        <h4>Christmas Wishlist</h4>
                         <div class="christmas-wishlist__body">
                             <div class="christmas-wishlist__body__part1">
+                                <h4>Christmas Wishlist</h4>
+                                <br />
                                 <p>
                                     My most favourite project, the Christmas
                                     WishList, originated as a very simple idea
@@ -75,11 +77,33 @@
                                     It is a note-taking inspired app with a
                                     built-in media player and a responsive
                                     design. It is hosted live on github pages
-                                    and you may access it through this link.
+                                    and you may access it through this
+                                    <a
+                                        href="https://zvratna.github.io/christmas-wishlist/"
+                                        class="cross-link"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        >link.</a
+                                    >
                                     Here are some testing accounts that you may
-                                    use: beta@testy.com, testy@testy.com
-                                    christmas@wish.com, password:
-                                    weLoveChristmas123.
+                                    use:
+                                    <button class="link link__to-copy">
+                                        wishlist@wishlist.com
+                                        <img src="/assets/copy.svg" /></button
+                                    >,
+                                    <button class="link link__to-copy">
+                                        test@mail.com
+                                        <img src="/assets/copy.svg" /></button
+                                    >,
+                                    <button class="link link__to-copy">
+                                        christmas@wish.com
+                                        <img src="/assets/copy.svg" /></button
+                                    >, password:
+                                    <button class="link link__to-copy">
+                                        weLoveChristmas123
+                                        <img src="/assets/copy.svg" />
+                                    </button>
+                                    .
                                 </p>
                             </div>
                             <!-- <video class="chrismas-wishlist-mobile" controls>
@@ -109,9 +133,10 @@
                     <div class="project project--other">
                         <h4>Other Projects</h4>
                         <p>
-                            My work in the following projects consisted of
-                            incorporating JavaScript functionality into for the
-                            most part provided HTML and CSS codebase.
+                            My work in the following projects involved
+                            implementing JavaScript functionality and making
+                            minor modifications to pre-existing HTML and CSS
+                            code.
                         </p>
                         <div class="project--other__mozaic">
                             <div class="column-left">
@@ -215,10 +240,10 @@
                         <div class="contact-text-container">
                             <p>Send me a message at</p>
 
-                            <button class="link link__email">
-                                vratna.zuzana@gmail.com<span
-                                    ><img src="assets/copy.svg"
-                                /></span>
+                            <button class="link link__to-copy">
+                                vratna.zuzana@gmail.com<img
+                                    src="assets/copy.svg"
+                                />
                             </button>
                         </div>
                     </div>
@@ -226,25 +251,26 @@
                         class="content-contact__link content-contact__link--github"
                     >
                         <div class="contact-text-container">
-                            <button class="link">
-                                <a
-                                    href="https://github.com/zvratna"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    >Check out my GitHub.</a
-                                >
-                            </button>
+                            <a
+                                href="https://github.com/zvratna"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                class="link"
+                                >Check out my GitHub.</a
+                            >
                         </div>
                     </div>
                     <div
                         class="content-contact__link content-contact__link--resume"
                     >
                         <div class="contact-text-container">
-                            <button class="link">
-                                <a href="Vratna_CV_EN.pdf" download="Vratna_CV">
-                                    Download my CV.</a
-                                >
-                            </button>
+                            <a
+                                href="Vratna_CV_EN.pdf"
+                                download="Vratna_CV"
+                                class="link"
+                            >
+                                Download my CV.</a
+                            >
                         </div>
                     </div>
                 </div>
