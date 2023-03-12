@@ -1,12 +1,19 @@
 :root {
     --grey-light: #b7b7b7;
-    --smudge-grey: #eaeaea;
-    --grey-middle: #3c393b;
+    --white: #f6f6f6;
+    --grey-dark: #282828b3;
     --background-grey: #303030;
+    --background-grey-alpha: #303030f2;
     --grey-black: #181818;
-    --golden: #d6b277;
+    --golden: #c99f6b;
     /* lighter purple gray  #5D576B // purple as jacket #54273D alebo darker #462032  // eggplant #6c464e */
-    --golden-border: 2px solid var(--golden);
+    --golden-border: 1px solid var(--golden);
+
+    --box-shadow-big: 0px 8px 7px 0px #00000040;
+    --box-shadow-small: 1.95px 1.95px 2.6px #00000026;
+
+    --icon-size: 50px;
+    --icon-padding: 15px;
 }
 
 @keyframes focus-in-expand-fwd {
@@ -45,39 +52,33 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
-    color: var(--grey-light);
+    color: var(--white);
     background: var(--background-grey);
-    position: relative;
-}
-
-.background {
-    background-image: url('/assets/memphis-dark.jpg');
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    background-image: url('assets/rm218batch7-aum-27a.jpg');
     background-repeat: no-repeat;
+    background-position-x: 10%;
     background-size: cover;
+    /* background-blend-mode: lighten; */
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto 100px auto;
 }
 
 .nav {
     width: 100%;
     max-width: 600px;
-    padding: 15px;
+    padding: 10px;
     z-index: 100;
-    background-color: #303030f2;
-    border: 3px solid var(--golden);
-    border-radius: 50px;
-    margin: 15px auto 0 auto;
-    color: var(--smudge-grey);
+    background-color: var(--background-grey-alpha);
+    border: var(--golden-border);
+    border-radius: 8px;
+    margin: 25px auto 0 auto;
+    color: var(--white);
+    box-shadow: var(--box-shadow-big);
 }
 
 .nav.sticky {
@@ -85,6 +86,7 @@ body {
     opacity: 0.95;
     left: 0;
     right: 0;
+    margin: 15px auto 0 auto;
 }
 
 .nav__links {
@@ -110,16 +112,12 @@ body {
     padding: 0 20px;
     height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr 165px;
 }
 
 .header__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     text-align: center;
-    gap: 30px;
 }
 
 .focus-in-expand-fwd {
@@ -134,24 +132,28 @@ body {
     cursor: pointer;
     box-sizing: initial;
     border: none;
-    margin-top: 75px;
+    margin-bottom: 95px;
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 64px;
     color: var(--golden);
-    font-weight: 200;
+    font-weight: 400;
+    line-height: 75px;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 300;
-    color: var(--smudge-grey);
+    color: var(--white);
+    line-height: 30px;
+    letter-spacing: 0.6em;
+    margin-right: -0.6em;
 }
 
 h4 {
     font-weight: 400;
-    color: var(--smudge-grey);
+    color: var(--white);
 }
 
 .section {
@@ -172,6 +174,21 @@ h4 {
     transform: translateY(8rem);
 }
 
+#projects {
+    position: relative;
+}
+
+/* .divider {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    border-top: 7px solid var(--golden);
+} */
+
+/* #about-me {
+    background-color: var(--golden);
+} */
+
 .project--other {
     display: flex;
     flex-direction: column;
@@ -191,8 +208,6 @@ h4 {
 
 .chrismas-wishlist-mobile {
     width: 100%;
-    border: var(--golden-border);
-    border-radius: 50px;
 }
 
 .christmas-wishlist__body__part1 {
@@ -203,8 +218,6 @@ h4 {
 .christmas-wishlist-desktop {
     width: 100%;
     justify-self: end;
-    border: var(--golden-border);
-    border-radius: 50px;
 }
 
 .christmas-wishlist__body__part2 {
@@ -223,8 +236,9 @@ h4 {
 }
 
 .gif {
-    border: var(--golden-border);
-    border-radius: 50px;
+    border: 2px solid var(--golden);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow-big);
 }
 
 .guess-number {
@@ -269,21 +283,24 @@ h4 {
 }
 
 .content-about-me {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    row-gap: 65px;
 }
 
 .picture {
     align-self: center;
-    height: 150px;
-    border-radius: 50px;
+    height: 175px;
+    border-radius: 50%;
     margin: 0 25px;
     border: var(--golden-border);
+    box-shadow: var(--box-shadow-big);
 }
 
 .about-me-article {
     padding: 0 25px;
-    font-size: 0.9em;
-    font-weight: 400;
+    /* font-size: 0.9em; */
+    /* font-weight: 400; */
 }
 
 .cross-link {
@@ -291,23 +308,36 @@ h4 {
 }
 
 .technologies {
+    grid-column: span 2;
     display: flex;
-    gap: 40px;
-    justify-content: center;
-    padding: 15px 0;
+    justify-content: space-evenly;
+    padding: var(--icon-padding) 0;
+    box-shadow: var(--box-shadow-big);
+    border-radius: 8px;
+    background-color: #b7b7b7c0;
+}
+
+.technologies--christmas {
+    flex-wrap: wrap;
+    padding: var(--icon-padding);
+    gap: var(--icon-padding);
+    /* padding + icon + gap + icon + padding */
+    max-width: calc(var(--icon-size) * 2 + var(--icon-padding) * 3);
 }
 
 .technology {
-    max-width: 50px;
+    width: var(--icon-size);
+    height: var(--icon-size);
 }
 
 .content-contact {
     margin-top: 25px;
-    background-color: var(--grey-black);
-    border-radius: 50px;
+    background-color: var(--background-grey-alpha);
+    border-radius: 8px;
     width: 60%;
     align-self: center;
     border: var(--golden-border);
+    box-shadow: var(--box-shadow-big);
 }
 
 .actions {
@@ -325,8 +355,9 @@ h4 {
     height: 25px;
     cursor: pointer;
     background-color: var(--grey-light);
-    border: var(--golden-border);
-    border-radius: 50px;
+    /* border: var(--golden-border); */
+    border-radius: 50%;
+    box-shadow: var(--box-shadow-small);
 }
 
 .actions__button:hover {
@@ -336,6 +367,7 @@ h4 {
 .actions__button--active {
     background-color: var(--golden);
     transform: translateY(-60%);
+    box-shadow: var(--box-shadow-big);
 }
 
 .contact-text-container {
@@ -352,6 +384,10 @@ h4 {
     padding: 5px 20px;
 }
 
+.content-contact__link .link:hover {
+    background-color: var(--grey-dark);
+}
+
 .content-contact__link--active {
     display: grid;
     place-items: center;
@@ -365,13 +401,13 @@ h4 {
     font: inherit;
     position: relative;
     padding: 2px 10px;
-    border-radius: 50px;
+    border-radius: 8px;
     text-decoration: none;
     color: var(--golden);
 }
 
 .link:hover {
-    background-color: var(--grey-middle);
+    background-color: var(--background-grey);
 }
 
 .link img {

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600&display=swap"
+            href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
@@ -14,46 +14,46 @@
         <title>Portfolio</title>
     </head>
     <body>
-        <div class="background"></div>
         <div class="container">
             <header class="header">
                 <nav class="nav">
                     <ul class="nav__links">
                         <li class="nav__item">
-                            <a class="nav__link" href="#projects">Projects</a>
+                            <a class="nav__link" href="#projects">projects</a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="#about-me">About Me</a>
+                            <a class="nav__link" href="#about-me">about me</a>
                         </li>
                         <li class="nav__item">
-                            <a class="nav__link" href="#contact">Contact</a>
+                            <a class="nav__link" href="#contact">contact</a>
                         </li>
                     </ul>
                 </nav>
 
-                <div class="header__title focus-in-expand-fwd">
-                    <h1>Zuzana Vratna</h1>
-                    <h3>Frontend Development</h3>
-                    <div class="btn--scroll-to" id="arrow-container">
-                        <script>
-                            var animation = bodymovin.loadAnimation({
-                                container:
-                                    document.getElementById('arrow-container'),
-                                path: 'assets/arrow-down.json',
-                                render: 'svg',
-                                loop: true,
-                                autoplay: false,
-                            });
-                            setTimeout(function () {
-                                animation.play();
-                            }, 2200);
-                        </script>
-                    </div>
+                <div class="header__title">
+                    <h1 class="focus-in-expand-fwd">Zuzana Vratna</h1>
+                    <h3 class="focus-in-expand-fwd">frontend development</h3>
+                </div>
+                <div class="btn--scroll-to" id="arrow-container">
+                    <script>
+                        var animation = bodymovin.loadAnimation({
+                            container:
+                                document.getElementById('arrow-container'),
+                            path: 'assets/arrow-down.json',
+                            render: 'svg',
+                            loop: true,
+                            autoplay: false,
+                        });
+                        setTimeout(function () {
+                            animation.play();
+                        }, 2200);
+                    </script>
                 </div>
             </header>
 
             <section class="section" id="projects">
-                <h2 class="section__title">Projects</h2>
+                <div class="divider"></div>
+                <h2 class="section__title">projects</h2>
                 <div class="section__content">
                     <div class="project project--christmas-wishlist">
                         <div class="christmas-wishlist__body">
@@ -111,21 +111,36 @@
                             </video> -->
                             <img
                                 src="assets/wishlist-mobile.gif"
-                                class="chrismas-wishlist-mobile"
+                                class="gif chrismas-wishlist-mobile"
                             />
 
                             <img
                                 src="assets/wishlist-desktop.gif"
-                                class="christmas-wishlist-desktop"
+                                class="gif christmas-wishlist-desktop"
                             />
                             <div class="christmas-wishlist__body__part2">
                                 <h4>Technologies used:</h4>
-                                <ul>
-                                    <li>React</li>
-                                    <li>JavaScript</li>
-                                    <li>SCSS</li>
-                                    <li>Firestore</li>
-                                </ul>
+                                <div
+                                    class="technologies technologies--christmas"
+                                >
+                                    <img
+                                        src="assets/javascript.svg"
+                                        class="technology"
+                                    />
+                                    <img
+                                        src="assets/react.svg"
+                                        class="technology"
+                                    />
+
+                                    <img
+                                        src="assets/firebase.svg"
+                                        class="technology"
+                                    />
+                                    <img
+                                        src="assets/scss.svg"
+                                        class="technology"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,8 +181,8 @@
             </section>
 
             <section class="section" id="about-me">
-                <h2 class="section__title">About Me</h2>
-                <div class="section__content content-about-me">
+                <h2 class="section__title">about me</h2>
+                <div class="content-about-me">
                     <img
                         class="picture"
                         src="/the pic.jpg"
@@ -198,27 +213,27 @@
                         </p>
                         <br />
                         <p>
-                            I'm excited to see where this path takes me and am
+                            I'm excited to see where this path takes me and
                             ready to continue learning and growing as a
                             developer. See my projects
                             <a href="#projects" class="cross-link">here</a>.
                         </p>
                     </article>
-                </div>
-                <div class="technologies">
-                    <img src="assets/javascript.svg" class="technology" />
-                    <img src="assets/react.svg" class="technology" />
-                    <img src="assets/css.svg" class="technology" />
-                    <img src="assets/html.svg" class="technology" />
-                    <img src="assets/firebase.svg" class="technology" />
-                    <img src="assets/scss.svg" class="technology" />
-                    <img src="assets/github.svg" class="technology" />
-                    <img src="assets/vscode.svg" class="technology" />
+                    <div class="technologies">
+                        <img src="assets/javascript.svg" class="technology" />
+                        <img src="assets/react.svg" class="technology" />
+                        <img src="assets/css.svg" class="technology" />
+                        <img src="assets/html.svg" class="technology" />
+                        <img src="assets/firebase.svg" class="technology" />
+                        <img src="assets/scss.svg" class="technology" />
+                        <img src="assets/github.svg" class="technology" />
+                        <img src="assets/vscode.svg" class="technology" />
+                    </div>
                 </div>
             </section>
 
             <section class="section" id="contact">
-                <h2 class="section__title">Contact</h2>
+                <h2 class="section__title">contact</h2>
                 <div class="section__content content-contact">
                     <div class="actions">
                         <button
