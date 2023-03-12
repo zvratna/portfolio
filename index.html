@@ -11,6 +11,7 @@
         />
         <link rel="stylesheet" href="style.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.10.2/lottie.min.js"></script>
+        <script defer src="script.js"></script>
         <title>Portfolio</title>
     </head>
     <body>
@@ -18,13 +19,13 @@
             <header class="header">
                 <nav class="nav">
                     <ul class="nav__links">
-                        <li class="nav__item">
+                        <li>
                             <a class="nav__link" href="#projects">projects</a>
                         </li>
-                        <li class="nav__item">
+                        <li>
                             <a class="nav__link" href="#about-me">about me</a>
                         </li>
-                        <li class="nav__item">
+                        <li>
                             <a class="nav__link" href="#contact">contact</a>
                         </li>
                     </ul>
@@ -34,162 +35,165 @@
                     <h1 class="focus-in-expand-fwd">Zuzana Vratna</h1>
                     <h3 class="focus-in-expand-fwd">frontend development</h3>
                 </div>
-                <div class="btn--scroll-to" id="arrow-container">
-                    <script>
-                        var animation = bodymovin.loadAnimation({
-                            container:
-                                document.getElementById('arrow-container'),
-                            path: 'assets/arrow-down.json',
-                            render: 'svg',
-                            loop: true,
-                            autoplay: false,
-                        });
-                        setTimeout(function () {
-                            animation.play();
-                        }, 2200);
-                    </script>
-                </div>
+                <button id="scroll-animation"></button>
             </header>
 
             <section class="section" id="projects">
-                <div class="divider"></div>
-                <h2 class="section__title">projects</h2>
-                <div class="section__content">
-                    <div class="project project--christmas-wishlist">
-                        <div class="christmas-wishlist__body">
-                            <div class="christmas-wishlist__body__part1">
-                                <h4>Christmas Wishlist</h4>
-                                <br />
-                                <p>
-                                    My most favourite project, the Christmas
-                                    WishList, originated as a very simple idea
-                                    for a React app but grew in complexity each
-                                    day of its development. I started Christmas
-                                    WishList from scratch, with zero knowledge
-                                    of React, Firebase or Sass at the beginning
-                                    so I had not expected that one day I would
-                                    be showcasing it on my portfolio as a
-                                    full-fledged functional dynamic web
-                                    application.
-                                </p>
-                                <br />
-                                <p>
-                                    It is a note-taking inspired app with a
-                                    built-in media player and a responsive
-                                    design. It is hosted live on github pages
-                                    and you may access it through this
-                                    <a
-                                        href="https://zvratna.github.io/christmas-wishlist/"
-                                        class="cross-link"
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                        >link.</a
-                                    >
-                                    Here are some testing accounts that you may
-                                    use:
-                                    <button class="link link__to-copy">
-                                        wishlist@wishlist.com
-                                        <img src="/assets/copy.svg" /></button
-                                    >,
-                                    <button class="link link__to-copy">
-                                        test@mail.com
-                                        <img src="/assets/copy.svg" /></button
-                                    >,
-                                    <button class="link link__to-copy">
-                                        christmas@wish.com
-                                        <img src="/assets/copy.svg" /></button
-                                    >, password:
-                                    <button class="link link__to-copy">
-                                        weLoveChristmas123
-                                        <img src="/assets/copy.svg" />
-                                    </button>
-                                    .
-                                </p>
-                            </div>
-                            <!-- <video class="chrismas-wishlist-mobile" controls>
-                                <source src="assets/Untitled.mp4" />
-                            </video> -->
+                <h2>projects</h2>
+                <div class="christmas-wishlist">
+                    <div>
+                        <h4>Christmas Wishlist</h4>
+                        <br />
+                        <p>
+                            My most favourite project, the Christmas WishList,
+                            originated as a very simple idea for a React app but
+                            grew in complexity each day of its development. I
+                            started Christmas WishList from scratch, with zero
+                            knowledge of React, Firebase or Sass at the
+                            beginning so I had not expected that one day I would
+                            be showcasing it on my portfolio as a full-fledged
+                            functional dynamic web application.
+                        </p>
+                        <br />
+                        <p>
+                            It is a note-taking inspired app with a built-in
+                            media player and a responsive design. It is hosted
+                            live on github pages and you may access it through
+                            this
+                            <a
+                                href="https://zvratna.github.io/christmas-wishlist/"
+                                class="gold-link"
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                >link.</a
+                            >
+                            Here are some testing accounts that you may use:
+                        </p>
+
+                        <div class="christmas-emails">
+                            <button class="link link--to-copy">
+                                wishlist@wishlist.com
+                                <img
+                                    class="link__copy-icon"
+                                    src="/assets/copy.svg"
+                                    alt="copy-icon"
+                                />
+                            </button>
+                            <button class="link link--to-copy">
+                                test@mail.com
+                                <img
+                                    class="link__copy-icon"
+                                    src="/assets/copy.svg"
+                                    alt="copy-icon"
+                                />
+                            </button>
+                            <button class="link link--to-copy">
+                                christmas@wish.com
+                                <img
+                                    class="link__copy-icon"
+                                    src="/assets/copy.svg"
+                                    alt="copy-icon"
+                                />
+                            </button>
+                        </div>
+                        password:
+                        <button class="link link--to-copy">
+                            weLoveChristmas123
                             <img
-                                src="assets/wishlist-mobile.gif"
-                                class="gif chrismas-wishlist-mobile"
+                                class="link__copy-icon"
+                                src="/assets/copy.svg"
+                                alt="copy-icon"
+                            />
+                        </button>
+                    </div>
+                    <img
+                        class="gif stretch"
+                        src="assets/wishlist-mobile.gif"
+                        alt="christmas-wishlist-mobile-preview"
+                    />
+                    <img
+                        class="gif stretch"
+                        src="assets/wishlist-desktop.gif"
+                        alt="christmas-wishlist-desktop-preview"
+                    />
+                    <div class="christmas-wishlist__technologies">
+                        <h4>Technologies used:</h4>
+                        <div class="technologies technologies--christmas">
+                            <img
+                                class="technology"
+                                src="assets/javascript.svg"
+                                alt="javascript-logo"
+                            />
+                            <img
+                                class="technology"
+                                src="assets/react.svg"
+                                alt="react-logo"
                             />
 
                             <img
-                                src="assets/wishlist-desktop.gif"
-                                class="gif christmas-wishlist-desktop"
+                                class="technology"
+                                src="assets/firebase.svg"
+                                alt="firebase-logo"
                             />
-                            <div class="christmas-wishlist__body__part2">
-                                <h4>Technologies used:</h4>
-                                <div
-                                    class="technologies technologies--christmas"
-                                >
-                                    <img
-                                        src="assets/javascript.svg"
-                                        class="technology"
-                                    />
-                                    <img
-                                        src="assets/react.svg"
-                                        class="technology"
-                                    />
-
-                                    <img
-                                        src="assets/firebase.svg"
-                                        class="technology"
-                                    />
-                                    <img
-                                        src="assets/scss.svg"
-                                        class="technology"
-                                    />
-                                </div>
-                            </div>
+                            <img
+                                class="technology"
+                                src="assets/scss.svg"
+                                alt="scss-logo"
+                            />
                         </div>
                     </div>
+                </div>
 
-                    <div class="project project--other">
-                        <h4>Other Projects</h4>
-                        <p>
-                            My work in the following projects involved
-                            implementing JavaScript functionality and making
-                            minor modifications to pre-existing HTML and CSS
-                            code.
-                        </p>
-                        <div class="project--other__mozaic">
-                            <div class="column-left">
-                                <img
-                                    src="assets/bankist-app.gif"
-                                    class="gif bankist-app"
-                                />
-                                <img
-                                    src="assets/guess-number.gif"
-                                    class="gif guess-number"
-                                />
-                                <img
-                                    src="assets/pig-game.gif"
-                                    class="gif pig-game"
-                                />
-                            </div>
-                            <div class="column-right">
-                                <img
-                                    src="assets/bankist-landing.gif"
-                                    class="gif bankist-landing"
-                                />
-                                <img src="assets/mapty.gif" class="gif mapty" />
-                            </div>
+                <div class="other-projects">
+                    <h4>Other Projects</h4>
+                    <p>
+                        My work in the following projects involved implementing
+                        JavaScript functionality and making minor modifications
+                        to pre-existing HTML and CSS code.
+                    </p>
+                    <div class="other-projects__mozaic">
+                        <div class="column column--left">
+                            <img
+                                class="gif stretch"
+                                src="assets/bankist-app.gif"
+                                alt="bankist-app-preview"
+                            />
+                            <img
+                                class="gif guess-number"
+                                src="assets/guess-number.gif"
+                                alt="guess-number-preview"
+                            />
+                            <img
+                                class="gif pig-game"
+                                src="assets/pig-game.gif"
+                                alt="pig-game-preview"
+                            />
+                        </div>
+                        <div class="column column--right">
+                            <img
+                                class="gif bankist-landing"
+                                src="assets/bankist-landing.gif"
+                                alt="bankist-landing-preview"
+                            />
+                            <img
+                                class="gif stretch"
+                                src="assets/mapty.gif"
+                                alt="mapty-preview"
+                            />
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="section" id="about-me">
-                <h2 class="section__title">about me</h2>
+                <h2>about me</h2>
                 <div class="content-about-me">
                     <img
                         class="picture"
                         src="/the pic.jpg"
                         alt="profile-picture"
                     />
-                    <article class="about-me-article">
-                        <!-- TODO: technologies - add span with color matching efect -->
+                    <article>
                         <h4>
                             I'm Zuzana, and I've always had a passion for
                             learning.
@@ -216,54 +220,89 @@
                             I'm excited to see where this path takes me and
                             ready to continue learning and growing as a
                             developer. See my projects
-                            <a href="#projects" class="cross-link">here</a>.
+                            <a href="#projects" class="gold-link">here</a>.
                         </p>
                     </article>
                     <div class="technologies">
-                        <img src="assets/javascript.svg" class="technology" />
-                        <img src="assets/react.svg" class="technology" />
-                        <img src="assets/css.svg" class="technology" />
-                        <img src="assets/html.svg" class="technology" />
-                        <img src="assets/firebase.svg" class="technology" />
-                        <img src="assets/scss.svg" class="technology" />
-                        <img src="assets/github.svg" class="technology" />
-                        <img src="assets/vscode.svg" class="technology" />
+                        <img
+                            class="technology"
+                            src="assets/javascript.svg"
+                            alt="javascript-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/react.svg"
+                            alt="react-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/css.svg"
+                            alt="css-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/html.svg"
+                            alt="html-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/firebase.svg"
+                            alt="firebase-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/scss.svg"
+                            alt="scss-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/github.svg"
+                            alt="github-logo"
+                        />
+                        <img
+                            class="technology"
+                            src="assets/vscode.svg"
+                            alt="vscode-logo"
+                        />
                     </div>
                 </div>
             </section>
 
             <section class="section" id="contact">
-                <h2 class="section__title">contact</h2>
-                <div class="section__content content-contact">
+                <h2>contact</h2>
+                <div class="content-contact">
                     <div class="actions">
                         <button
                             class="actions__button actions__button--active"
                             data-tab="email"
                         >
-                            <img src="assets/email.svg" />
+                            <img src="assets/email.svg" alt="email-icon" />
                         </button>
                         <button class="actions__button" data-tab="github">
-                            <img src="assets/github.svg" />
+                            <img src="assets/github.svg" alt="github-logo" />
                         </button>
                         <button class="actions__button" data-tab="resume">
-                            <img src="assets/resume.svg" />
+                            <img src="assets/resume.svg" alt="resume-icon" />
                         </button>
                     </div>
                     <div
-                        class="content-contact__link content-contact__link--email content-contact__link--active"
+                        class="content-contact__container content-contact__container--email content-contact__container--active"
                     >
                         <div class="contact-text-container">
                             <p>Send me a message at</p>
 
-                            <button class="link link__to-copy">
-                                vratna.zuzana@gmail.com<img
-                                    src="assets/copy.svg"
+                            <button class="link link--to-copy">
+                                vratna.zuzana@gmail.com
+                                <img
+                                    class="link__copy-icon"
+                                    src="/assets/copy.svg"
+                                    alt="copy-icon"
                                 />
                             </button>
                         </div>
                     </div>
                     <div
-                        class="content-contact__link content-contact__link--github"
+                        class="content-contact__container content-contact__container--github"
                     >
                         <div class="contact-text-container">
                             <a
@@ -276,7 +315,7 @@
                         </div>
                     </div>
                     <div
-                        class="content-contact__link content-contact__link--resume"
+                        class="content-contact__container content-contact__container--resume"
                     >
                         <div class="contact-text-container">
                             <a
@@ -290,7 +329,6 @@
                     </div>
                 </div>
             </section>
-            <script src="script.js"></script>
         </div>
     </body>
 </html>

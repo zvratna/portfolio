@@ -1,15 +1,26 @@
 'use strict';
 
 const nav = document.querySelector('.nav');
-const btnScrollTo = document.querySelector('.btn--scroll-to');
+const scrollAnimation = document.getElementById('scroll-animation');
 const section1 = document.getElementById('projects');
-const navLinksEl = document.querySelector('.nav__links');
+const navLinks = document.querySelector('.nav__links');
 
-btnScrollTo.addEventListener('click', function () {
+scrollAnimation.addEventListener('click', function () {
     section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-navLinksEl.addEventListener('click', (e) => {
+const animation = bodymovin.loadAnimation({
+    container: scrollAnimation,
+    path: 'assets/arrow-down.json',
+    render: 'svg',
+    loop: true,
+    autoplay: false,
+});
+setTimeout(function () {
+    animation.play();
+}, 2200);
+
+navLinks.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (e.target.classList.contains('nav__link')) {
@@ -66,10 +77,10 @@ const stickyNav = function (entries) {
 
     if (!entry.isIntersecting) {
         nav.classList.add('sticky');
-        btnScrollTo.classList.add('hidden');
+        scrollAnimation.classList.add('hidden');
     } else {
         nav.classList.remove('sticky');
-        btnScrollTo.classList.remove('hidden');
+        scrollAnimation.classList.remove('hidden');
     }
 };
 
@@ -83,44 +94,10 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 headerObserver.observe(header);
 
-// const sections = document.querySelectorAll('.section');
-// const navLinks = document.querySelectorAll('.nav__link');
-
-// const createObserver = (rootMargin) => {
-//     const observer = new IntersectionObserver(
-//         (entries) => {
-//             entries.forEach((entry) => {
-//                 if (entry.isIntersecting) {
-//                     const sectionId = entry.target.getAttribute('id');
-//                     const navLink = document.querySelector(
-//                         `.nav__link[href="#${sectionId}"]`
-//                     );
-//                     console.log(navLink);
-//                     // Remove the 'active' class from all nav links
-//                     navLinks.forEach((link) => {
-//                         link.style.color = '#f6f6f6';
-//                     });
-
-//                     // Add the 'active' class to the current nav link
-//                     navLink.style.color = '#C99F6B';
-//                 }
-//             });
-//         },
-//         { root: null, threshold: 0, rootMargin }
-//     );
-
-//     sections.forEach((section) => {
-//         observer.observe(section);
-//     });
-// };
-
-// createObserver('-70% 0% -30% 0%');
-// createObserver('30% 0% -70% 0%');
-
 // contact tabbed
 const tabs = document.querySelectorAll('.actions__button');
 const tabsContainer = document.querySelector('.actions');
-const tabsContents = document.querySelectorAll('.content-contact__link');
+const tabsContents = document.querySelectorAll('.content-contact__container');
 
 tabsContainer.addEventListener('click', function (e) {
     e.preventDefault();
@@ -132,7 +109,7 @@ tabsContainer.addEventListener('click', function (e) {
     // Remove active classes for tab and content (aka display none)
     tabs.forEach((tab) => tab.classList.remove('actions__button--active'));
     tabsContents.forEach((c) =>
-        c.classList.remove('content-contact__link--active')
+        c.classList.remove('content-contact__container--active')
     );
 
     //Active tab
@@ -140,23 +117,23 @@ tabsContainer.addEventListener('click', function (e) {
 
     //Activate content area
     document
-        .querySelector(`.content-contact__link--${clicked.dataset.tab}`)
-        .classList.add('content-contact__link--active');
+        .querySelector(`.content-contact__container--${clicked.dataset.tab}`)
+        .classList.add('content-contact__container--active');
 });
 
 // copy to clipboard
 
-const buttonsToCopy = document.querySelectorAll('.link__to-copy');
+const buttonsToCopy = document.querySelectorAll('.link--to-copy');
 
 // loop through each button and attach a click event listener to its img
 buttonsToCopy.forEach((button) => {
     button.addEventListener('click', function () {
         navigator.clipboard.writeText(this.textContent.trim());
         console.log(`Copied to clipboard`);
-        this.classList.add('fade-out-bck');
+        this.classList.add('copied');
 
         setTimeout(() => {
-            this.classList.remove('fade-out-bck');
+            this.classList.remove('copied');
         }, 1000);
     });
 });
