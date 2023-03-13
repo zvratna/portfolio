@@ -5,10 +5,7 @@ const scrollAnimation = document.getElementById('scroll-animation');
 const section1 = document.getElementById('projects');
 const navLinks = document.querySelector('.nav__links');
 
-scrollAnimation.addEventListener('click', function () {
-    section1.scrollIntoView({ behavior: 'smooth' });
-});
-
+// scroll animation
 const animation = bodymovin.loadAnimation({
     container: scrollAnimation,
     path: 'assets/arrow-down.json',
@@ -20,58 +17,13 @@ setTimeout(function () {
     animation.play();
 }, 2200);
 
-navLinks.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    if (e.target.classList.contains('nav__link')) {
-        const link = e.target;
-        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-
-        siblings.forEach((el) => {
-            if (el !== link) {
-                el.style.color = 'grey';
-            } else {
-                el.style.color = '#C99F6B';
-                activeLink = el;
-            }
-        });
-
-        const id = e.target.getAttribute('href');
-        document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-    }
+// scroll to section 1 on click
+scrollAnimation.addEventListener('click', function () {
+    section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-let activeLink = null;
-
-const handleHover = function (e) {
-    if (e.target.classList.contains('nav__link')) {
-        const link = e.target;
-        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-
-        siblings.forEach((el) => {
-            if (el !== link) {
-                el.style.opacity = this;
-                el.style.color = '#f6f6f6';
-            } else {
-                el.style.opacity = 1;
-                el.style.color = '#C99F6B';
-            }
-        });
-    } else if (e.target.closest('.nav__link') === null) {
-        const siblings = document.querySelectorAll('.nav__link');
-        siblings.forEach((el) => {
-            if (el !== activeLink) {
-                el.style.color = '#f6f6f6';
-            } else {
-                el.style.color = '#C99F6B';
-            }
-        });
-    }
-};
-
-nav.addEventListener('mouseover', handleHover.bind(0.5));
-nav.addEventListener('mouseout', handleHover.bind(1));
-
+// navigation
+// sticky nav from header end
 const stickyNav = function (entries) {
     const [entry] = entries;
 
@@ -93,6 +45,46 @@ const headerObserver = new IntersectionObserver(stickyNav, {
     rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
+
+// nav links smooth scroll to respective section on click
+navLinks.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (e.target.classList.contains('nav__link')) {
+        const link = e.target;
+        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+        siblings.forEach((el) => {
+            el.classList.remove('gold-link');
+        });
+
+        link.classList.add('gold-link');
+
+        const id = e.target.getAttribute('href');
+        document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+    }
+});
+
+// nav links hover effect
+let activeLink = null;
+
+const handleHover = function (e) {
+    if (e.target.classList.contains('nav__link')) {
+        const link = e.target;
+        const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+
+        siblings.forEach((el) => {
+            if (el !== link) el.style.opacity = this;
+
+            el.classList.remove('gold-link');
+        });
+
+        link.classList.add('gold-link');
+    }
+};
+
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
 
 // contact tabbed
 const tabs = document.querySelectorAll('.actions__button');

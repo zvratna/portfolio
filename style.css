@@ -224,7 +224,6 @@ h4 {
     box-shadow: var(--box-shadow-big);
     border-radius: var(--custom-radius);
     background-color: #b7b7b7c0;
-    margin: 0 15px;
 }
 
 .technologies--christmas {
